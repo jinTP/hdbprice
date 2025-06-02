@@ -4,7 +4,8 @@ import pandas as pd
 import joblib
 
 # Load the trained model
-model = joblib.load('hdb_model.pkl')
+model = joblib.load('gbmodel.pkl')
+
 
 # Define the input options
 towns = ['ANG MO KIO', 'BEDOK', 'BISHAN', 'BUKIT BATOK', 'BUKIT MERAH',
@@ -55,3 +56,15 @@ if st.button("Predict Price"):
     # Make prediction
     prediction = model.predict(input_df)[0]
     st.success(f"Predicted Resale Price: ${prediction:,.2f}")
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background: url("https://www.shutterstock.com/shutterstock/videos/1025418011/thumb/1.jpg");
+        background-size: cover
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
